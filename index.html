@@ -1,597 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>XyberLearn</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Jemay Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.7;
+    }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #00a6ff, #005eff);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom-left-radius: 50% 10%;
+      border-bottom-right-radius: 50% 10%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    /* NAV */
+    nav {
+      background: #005eff;
+      padding: 0.8rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background: white;
+      color: #005eff;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    /* SECCIONES */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      color: #004cff;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #00a6ff;
+      margin-top: 6px;
+      border-radius: 2px;
+    }
+    h3 {
+      color: #002fff;
+      margin-top: 1rem;
+    }
+    p, li {
+      font-size: 1.05rem;
+    }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    /* INTEGRANTES */
+    .integrantes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin: 0;
+      color: #005eff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background: linear-gradient(135deg, #005eff, #00a6ff);
+      color: white;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="">
-        <h1 class="sitename">XyberLearn</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Inicio<br></a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#team">Equipo</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted flex-md-shrink-0" href="php/usuario/login.php">Iniciar cursos</a>
-
-    </div>
+  <header>
+    <h1>Jemay Systems</h1>
+    <p>Plataforma académica digital para instituciones educativas</p>
   </header>
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">Nosotros ofrecemos nuevas alternativas para el aprendizaje en medios virtuales</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Somos un equipo de programadores para impulsar a otros programadores</p>
-            <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-              <a href="cursos/cursos.php" class="btn-get-started">Iniciar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-              <h3>Quiénes Somos</h3>
-              <p>
-                Somos un equipo apasionado de programadores dedicados a impulsar a otros programadores. Nuestra misión es proporcionar recursos educativos de alta calidad para ayudar a los desarrolladores de todos los niveles a mejorar sus habilidades y alcanzar sus metas profesionales. Creemos en el poder de la comunidad y el aprendizaje colaborativo, y estamos aquí para apoyarte en cada paso de tu viaje en el mundo de la programación.
-              </p>
-              <div class="text-center text-lg-start">
-                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Read More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Values Section -->
-    <section id="values" class="values section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Values</h2>
-        <p>Lo Que Más Valoramos<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-              <img src="assets/img/values-1.png" class="img-fluid" alt="">
-              <h3>Pasión por la Programación:</h3>
-              <p> Creemos que la pasión es el motor que impulsa el aprendizaje y la innovación. Fomentamos un ambiente donde los programadores pueden explorar y desarrollar su amor por el código.</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <img src="assets/img/values-2.png" class="img-fluid" alt="">
-              <h3>Aprendizaje Continuo:</h3>
-              <p> La tecnología está en constante evolución, y nosotros también. Valoramos el aprendizaje continuo y proporcionamos recursos actualizados para mantener a nuestros estudiantes a la vanguardia.</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <img src="assets/img/values-3.png" class="img-fluid" alt="">
-              <h3>Colaboración y Comunidad:</h3>
-              <p>Sabemos que juntos somos más fuertes. Promovemos la colaboración y el apoyo mutuo dentro de nuestra comunidad de programadores.</p>
-            </div>
-          </div><!-- End Card Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Values Section -->
-
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>Nuestras Funciones Avanzadas<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-6" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/features.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-6 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Proyectos Prácticos</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Mentoría Personalizada</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Actualizaciones Constantes</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Certificaciones Reconocidas</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Comunidad Activa</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Fácil comprensión</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Section -->
-
-    <!-- Alt Features Section -->
-    <section id="alt-features" class="alt-features section">
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-7 d-flex order-2 order-xl-1" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="row align-self-center gy-5">
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-award"></i>
-                <div>
-                  <h4>Cursos Especializados:</h4>
-                  <p>Ofrecemos una amplia gama de cursos avanzados en diversas tecnologías y lenguajes de programación, incluyendo algoritmos complejos, estructuras de datos avanzadas, y desarrollo de aplicaciones a gran escala.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-card-checklist"></i>
-                <div>
-                  <h4>Proyectos Prácticos:</h4>
-                  <p>Ofrecemos una amplia gama de cursos avanzados en diversas tecnologías y lenguajes de programación, incluyendo algoritmos complejos, estructuras de datos avanzadas, y desarrollo de aplicaciones a gran escala.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-dribbble"></i>
-                <div>
-                  <h4>Mentoría Personalizada:</h4>
-                  <p>Contamos con un equipo de mentores expertos que están disponibles para guiarte y responder a tus preguntas, asegurando que obtengas el máximo provecho de tu aprendizaje.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-filter-circle"></i>
-                <div>
-                  <h4>Comunidad Activa:</h4>
-                  <p>Únete a una comunidad vibrante de programadores donde puedes compartir tus experiencias, colaborar en proyectos y aprender de otros.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-lightning-charge"></i>
-                <div>
-                  <h4>Actualizaciones Constantes:</h4>
-                  <p>Nuestros cursos se actualizan regularmente para reflejar las últimas tendencias y tecnologías en el campo de la programación, manteniéndote siempre a la vanguardia.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6 icon-box">
-                <i class="bi bi-patch-check"></i>
-                <div>
-                  <h4>Certificaciones Reconocidas:</h4>
-                  <p>Al completar nuestros cursos, recibirás certificaciones que son reconocidas por la industria, ayudándote a destacar en el mercado laboral.</p>
-                </div>
-              </div><!-- End Feature Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-xl-5 d-flex align-items-center order-1 order-xl-2" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/alt-features.png" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Alt Features Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Otros Servicios<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <i class="bi bi-activity icon"></i>
-              <h3>Cursos en Línea</h3>
-              <p>Ofrecemos una variedad de cursos en línea que cubren desde los fundamentos de la programación hasta temas avanzados en diferentes lenguajes y tecnologías.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <i class="bi bi-broadcast icon"></i>
-              <h3>Mentoría Personalizada</h3>
-              <p>Proporcionamos sesiones de mentoría uno a uno con programadores experimentados que pueden ayudarte a resolver dudas específicas y guiarte en tu desarrollo profesional.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <i class="bi bi-easel icon"></i>
-              <h3>Certificaciones</h3>
-              <p>Al completar nuestros cursos, recibirás certificaciones que validan tus conocimientos y habilidades, ayudándote a destacarte en el mercado laboral.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <i class="bi bi-bounding-box-circles icon"></i>
-              <h3>Recursos Adicionales</h3>
-              <p>Accede a una biblioteca de recursos adicionales, incluyendo libros electrónicos, tutoriales en video, y artículos técnicos para complementar tu aprendizaje.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <i class="bi bi-calendar4-week icon"></i>
-              <h3>Soporte Técnico</h3>
-              <p>Ofrecemos soporte técnico para ayudarte a resolver cualquier problema que puedas encontrar durante tu proceso de aprendizaje.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item item-pink position-relative">
-              <i class="bi bi-chat-square-text icon"></i>
-              <h3>Multiples lenguajes de programación</h3>
-              <p>Ofrecemos multiples lenguajes de programación, desde orientado a objetos hasta desarrollo web.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-    <!-- Team Section -->
-    <section id="team" class="team section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Todo el team XyberLearm</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>FELIPE ALVAREZ LONDOÑO</h4>
-                <span>Back-end</span>
-                <p>Amante al desarrollo de servidores web.</p>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>SAMUEL RIOS HENAO</h4>
-                <span>back-end</span>
-                <p>Amante al desarrollo web y a la tecnologia.</p>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>JOSE MIGUEL GOEZ MONTOYA</h4>
-                <span>Front-end</span>
-                <p>Apasionado al diseño de paginas web.</p>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>MATEO ANDRES GAVIRIA HURTADO</h4>
-                <span>Front-end</span>
-                <p>Amante al diseño de aplicaciones web.</p>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contacto</h2>
-        <p>Contactanos</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="200">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>INEM</p>
-                  <p>JOSE FELIX DE RESTREPO</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+57 604 266</p>
-                  <p>+57 300 4541387</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="400">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>inemjose@inemjose.edu.co</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item" data-aos="fade" data-aos-delay="500">
-                  <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>TODOS LOS DIAS</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="https://mail.google.com/" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Xyberlearn</span>
-          </a>
-
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-
-        <div class="col-lg-4 col-md-12">
-
-
-      </div>
+  <nav>
+    <a href="#introduccion">Introducción</a>
+    <a href="#justificacion">Justificación</a>
+    <a href="#objetivos">Objetivos</a>
+    <a href="#integrantes">Integrantes</a>
+    <a href="#conclusiones">Conclusiones</a>
+  </nav>
+
+  <section id="introduccion">
+    <h2>Introducción</h2>
+    <p>
+      El desarrollo tecnológico ha transformado de manera significativa la forma en que las instituciones educativas gestionan 
+      sus procesos internos. Sin embargo, todavía existen muchas instituciones que dependen de sistemas tradicionales, 
+      manuales o poco integrados, lo que ocasiona retrasos, desorganización e incluso pérdida de información académica.
+    </p>
+    <p>
+      El proyecto <b>Jemay Systems</b> nace como una propuesta innovadora que busca resolver estas dificultades a través 
+      de la implementación de una plataforma web académica. Esta herramienta permitirá optimizar procesos como matrículas, 
+      asignación de horarios, consulta de calificaciones y comunicación entre estudiantes, docentes y administrativos. 
+      Con un diseño moderno y seguro, el sistema se plantea como una solución integral que facilita la digitalización 
+      de los procesos educativos.
+    </p>
+    <p>
+      Además de su aporte institucional, este proyecto constituye un espacio de aprendizaje práctico para sus creadores, 
+      quienes ponen en práctica los conocimientos adquiridos en programación, bases de datos, análisis de requerimientos 
+      y trabajo en equipo, fortaleciendo sus competencias académicas y profesionales.
+    </p>
+  </section>
+
+  <section id="justificacion">
+    <h2>Justificación</h2>
+    <p>
+      La necesidad de un sistema académico eficiente es evidente en la mayoría de las instituciones educativas. 
+      La gestión manual genera problemas como pérdida de información, dificultades en la comunicación, tiempos de respuesta 
+      lentos y sobrecarga administrativa. Estos obstáculos no solo afectan la parte organizativa, sino que repercuten 
+      directamente en la calidad del servicio educativo.
+    </p>
+    <p>
+      <b>Jemay Systems</b> se justifica en la importancia de ofrecer una solución práctica, accesible y moderna que 
+      facilite la administración escolar. A través de esta plataforma, los estudiantes podrán consultar sus notas y horarios, 
+      los docentes tendrán un espacio digital para registrar y organizar información académica, y los directivos 
+      contarán con reportes claros que les permitan tomar decisiones estratégicas.
+    </p>
+    <p>
+      La propuesta también fortalece el desarrollo profesional de los integrantes del proyecto, ya que fomenta 
+      la integración de conocimientos en áreas como ingeniería de software, análisis de sistemas, seguridad informática 
+      y diseño de interfaces de usuario.
+    </p>
+  </section>
+
+  <section id="objetivos">
+    <h2>Objetivos</h2>
+    <h3>Objetivo General</h3>
+    <p>
+      Desarrollar una plataforma web académica que centralice, digitalice y optimice los procesos administrativos 
+      y académicos de instituciones educativas, mejorando la eficiencia en la gestión y facilitando la interacción 
+      entre los diferentes actores de la comunidad académica.
+    </p>
+
+    <h3>Objetivos Específicos</h3>
+    <ul>
+      <li>Analizar los principales problemas que enfrentan las instituciones educativas en la gestión de procesos académicos.</li>
+      <li>Diseñar un modelo de base de datos que permita almacenar de forma segura y organizada la información institucional.</li>
+      <li>Implementar un sistema de autenticación y seguridad que proteja la información de estudiantes, docentes y administrativos.</li>
+      <li>Crear un módulo para la gestión de matrículas, calificaciones y horarios.</li>
+      <li>Desarrollar una interfaz web intuitiva y de fácil acceso para todos los usuarios.</li>
+      <li>Evaluar el funcionamiento del sistema mediante pruebas que aseguren su confiabilidad y eficacia.</li>
+    </ul>
+  </section>
+
+  <section id="marco-conceptual">
+    <h2>Cómo surgió Jemay Systems</h2>
+    <p>
+      Nuestro proyecto Jemay Systems surgió a partir de una necesidad que detectamos en el ámbito académico. 
+      Junto con mis compañeros Jerónimo Zapata, Miguel Villada, Andrés Taborda y Emmanuel Moreno, bajo la orientación del profesor, 
+      nos dimos cuenta de que muchas instituciones educativas aún manejan sus procesos académicos de manera desorganizada, 
+      ya sea con documentos físicos, hojas de cálculo o plataformas que no se ajustan a las necesidades actuales.
+    </p>
+    <p>
+      Al observar esas dificultades, pensamos en crear una solución tecnológica que hiciera más fácil la gestión académica, 
+      centralizando la información y permitiendo un acceso rápido y eficiente tanto para estudiantes como para docentes y directivos. 
+      De esa idea nació Jemay Systems, una página web diseñada para modernizar y optimizar estos procesos.
+    </p>
+    <p>
+      El nombre lo formamos con las iniciales de nuestros nombres, porque queríamos que reflejara el trabajo en equipo y el compromiso de todos nosotros. 
+      Para mí, este proyecto no es solo un requisito académico, sino también una oportunidad para aportar algo útil y real al mundo educativo.
+    </p>
+  </section>
+
+  <section id="integrantes">
+    <h2>Integrantes del Proyecto</h2>
+    <div class="integrantes">
+      <div class="card"><h3>Yohan Zuñiga</h3></div>
+      <div class="card"><h3>Jerónimo Zapata</h3></div>
+      <div class="card"><h3>Miguel Villada</h3></div>
+      <div class="card"><h3>Andrés Taborda</h3></div>
+      <div class="card"><h3>Emmanuel Moreno</h3></div>
     </div>
+  </section>
 
-    <div class="container copyright text-center mt-4">
-      <div class="credits">
-      </div>
-    </div>
+  <section id="conclusiones">
+    <h2>Conclusiones</h2>
+    <p>
+      El proyecto <b>Jemay Systems</b> permitió reconocer la importancia de los sistemas digitales en el ámbito educativo 
+      como una herramienta fundamental para mejorar la calidad en la gestión académica. A lo largo de su desarrollo, 
+      se evidenció que la digitalización no es simplemente una opción, sino una necesidad para responder a los retos 
+      actuales de las instituciones.
+    </p>
+    <p>
+      La investigación y diseño de esta plataforma también contribuyeron al fortalecimiento de las competencias 
+      tecnológicas de los integrantes, promoviendo el aprendizaje en bases de datos, programación web y análisis 
+      de requerimientos. Asimismo, el trabajo en equipo fue clave para lograr una propuesta integral y coherente.
+    </p>
+    <p>
+      Finalmente, se concluye que <b>Jemay Systems</b> no solo es una propuesta académica, sino que tiene el potencial 
+      de ser implementada en instituciones reales, aportando valor a la comunidad educativa y favoreciendo 
+      una transición efectiva hacia la digitalización institucional.
+    </p>
+  </section>
 
+  <footer>
+    <p>© 2025 Jemay Systems - Proyecto académico</p>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
